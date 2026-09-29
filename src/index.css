@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg-light: var(--bg-light);
+  --color-bg-medium: var(--bg-medium);
+  --color-bg-dark: var(--bg-dark);
+  --color-primary-btn: var(--primary-btn);
+  --color-secondary-btn: var(--secondary-btn);
+  --color-secondary-btn-text: var(--secondary-btn-text);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-navbar-border: var(--navbar-border);
+}
+
+:root {
+  --bg-light: #1a1a1a;
+  --bg-medium: #0d0d0d;
+  --bg-dark: #000000;
+  --primary-btn: #463eda;
+  --secondary-btn: #0a082b;
+  --secondary-btn-text: #d9d9d9;
+  --text-main: #d9d9d9;
+  --text-muted: #cccccc;
+  --navbar-border: #262626;
+}
+
+.light {
+  --bg-light: #ffffff;
+  --bg-medium: #f2f2f2;
+  --bg-dark: #e6e6e6;
+  --primary-btn: #2d25c1;
+  --secondary-btn: #d6d4f7;
+  --secondary-btn-text: #0d0d0d;
+  --text-main: #0d0d0d;
+  --text-muted: #333333;
+  --navbar-border: #cecdcd;
+}
