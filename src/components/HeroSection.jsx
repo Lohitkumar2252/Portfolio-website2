@@ -6,7 +6,7 @@ import LiquidMetalOrb from "./LiquidMetalOrb";
 // ─── Canvas Fallback ──────────────────────────────────────────────────────────
 
 function CanvasFallback() {
-  return <div className="w-full h-full bg-white" />;
+  return <div className="w-full h-full bg-black" />;
 }
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────

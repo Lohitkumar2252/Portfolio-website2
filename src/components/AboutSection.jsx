@@ -1,4 +1,6 @@
 import React from "react";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 const AboutSection = () => {
   const aboutMeText = [
@@ -9,8 +11,8 @@ const AboutSection = () => {
     "Currently seeking internships & freelance opportunities",
   ];
   return (
-    <div className="border border-white h-[90vh] p-10 flex max-h-150">
-      <div className="left border border-white w-1/2 p-5">
+    <section className=" h-[90vh] p-10 flex flex-row-reverse max-h-150">
+      <div className="left w-1/2 p-5">
         <h2 className="text-5xl font-semibold text-text-main ">About me</h2>
         <ul className="mt-20 flex flex-col gap-10 ml-10">
           {aboutMeText.map((text, index) => (
@@ -20,7 +22,14 @@ const AboutSection = () => {
           ))}
         </ul>
       </div>
-    </div>
+      <div className="right">
+        <DotLottieReact 
+        src="/aboutImgDark.lottie"
+        loop 
+        autoplay 
+      />
+      </div>
+    </section>
   );
 };
 
