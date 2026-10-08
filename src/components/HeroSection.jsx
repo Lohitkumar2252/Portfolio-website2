@@ -26,13 +26,13 @@ export default function HeroSection() {
   return (
     <section className="flex p-10 h-screen max-h-200">
       <div className="left w-1/2 flex justify-center flex-col p-5">
-        <p className="text-text-main uppercase text-lg">i build websites that</p>
-        <h1 className="text-text-main capitalize text-[5rem] leading-18">make businesses <span className="font-bold"><br />stand out</span></h1>
-        <p className="text-text-muted capitalize text-base leading-6 mt-3 w-[60%]">I help small businesses turn their online presence into a website that looks professional, builds trust, and makes it easier for customers to take action.</p>
+        {/* <p className="text-text-main uppercase text-lg">i build websites that</p> */}
+        <h1 className="text-text-main  text-[4rem] leading-18 font-primary">A Better Website for<span className="font-bold"><br />Better First Impression.</span></h1>
+        <p className="font-secondary text-text-muted capitalize text-base leading-6 mt-3 w-[60%]">I help businesses turn their online presence into a website that looks professional, builds trust, and makes it easier for customers to take action.</p>
         <p className="text-text-muted capitalize text-base leading-6 mt-3">Modern interfaces. Smooth interactions. Clean, responsive code.</p>
         <div className="btns flex gap-5 mt-5">
-          <button className="text-white bg-primary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center">Start Project</button>
-          <button className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center text-sm">Explore My Work</button>
+          <button className="text-white bg-primary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center font-secondary">Start Now</button>
+          <button className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center text-sm font-secondary">Explore My Work</button>
         </div>
 
       </div>

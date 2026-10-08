@@ -60,17 +60,17 @@ const projects = [
 const ProjectsSection = () => {
   return (
     <section className=" p-10 flex flex-col items-center">
-      <p className="text-xl text-primary-btn">Selected Work</p>
-      <h3 className="text-5xl text-text-main font-bold text-center">
-        Built from scratch.{" "}
+      <p className="text-xl text-primary-btn font-secondary">Selected Work</p>
+      <h3 className="text-5xl text-text-main font-bold text-center font-primary">
+        Built from scratch. {" "}
         <span>
           <br />
-          Designed to be experienced.
+         Made to work
         </span>
       </h3>
-      <p className="w-[30%] mt-4 text-center text-text-muted">
-        A collection of frontend projects where I experiment with modern
-        interfaces, interactions, animations, and responsive experiences.
+      <p className="w-[30%] mt-4 text-center text-text-muted font-secondary">
+       A collection of websites built with clean design, smooth interactions, and a great experience on every screen.
+
       </p>
 
       <div className="projects_container text-text-main w-full  rounded-4xl mt-6 p-5">
@@ -109,15 +109,15 @@ const ProjectsSection = () => {
                   <div className="num rounded-full bg-bg-light w-12 h-12 grid place-items-center">
                     {project.num}{" "}
                   </div>
-                  <h4 className="text-3xl font-bold text-text-main mt-1">
+                  <h4 className="text-3xl font-bold text-text-main mt-1 font-primary">
                     {project.Name}
                   </h4>
-                  <p className="text-text-muted">{project.Description}</p>
+                  <p className="text-text-muted font-secondary">{project.Description}</p>
                   <div className="flex  gap-5 ml-auto mt-4">
-                    <button className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center">
+                    <button className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center font-secondary">
                       Github
                     </button>
-                    <button className="text-white bg-primary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center text-sm">
+                    <button className="text-white bg-primary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center text-sm font-secondary">
                       Live Demo
                     </button>
                   </div>

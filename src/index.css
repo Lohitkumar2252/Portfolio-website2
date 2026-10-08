@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
 @import "tailwindcss";
 
 @theme {
@@ -10,6 +13,8 @@
   --color-text-main: var(--text-main);
   --color-text-muted: var(--text-muted);
   --color-navbar-border: var(--navbar-border);
+  --font-primary: "Khand", sans-serif;
+  --font-secondary: "Lora", serif;
 }
 
 :root {
@@ -35,5 +40,3 @@
   --text-muted: #333333;
   --navbar-border: #cecdcd;
 }
-
-
