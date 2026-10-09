@@ -4,7 +4,7 @@ const Navbar = () => {
   const links = ["Home", "About", "Projects", "Contact"];
   const [selected, setselected] = useState("Home");
   return (
-    <nav className="h-[60px] mx-auto w-200 mt-5 rounded-4xl flex items-center p-2 bg-bg-medium justify-between border border-navbar-border">
+    <nav className="h-[60px] mx-auto w-200 rounded-4xl flex items-center p-2 bg-bg-medium justify-between border border-navbar-border sticky top-5 z-50">
       <h1 className=" font-primary text-text-main font-bold text-xl ml-5">LOHIT KUMAR</h1>
       <ul className="flex gap-2 items-center text-base text-text-muted">
         {links.map((link) => (

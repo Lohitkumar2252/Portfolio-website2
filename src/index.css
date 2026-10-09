@@ -40,3 +40,8 @@
   --text-muted: #333333;
   --navbar-border: #cecdcd;
 }
+.pullcord-left {
+  left: 10px;
+  right: auto !important;
+  position: absolute !important;
+}

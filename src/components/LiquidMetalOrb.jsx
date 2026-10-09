@@ -56,7 +56,7 @@ export default function LiquidMetalOrb({ mousePos }) {
       {/* Studio environment for chrome reflections */}
 
       <Environment preset="studio" />
-      <color attach="background" args={["#000000"]} />
+    
 
       {/* Ambient light for base brightness */}
       <ambientLight intensity={0.15} />
