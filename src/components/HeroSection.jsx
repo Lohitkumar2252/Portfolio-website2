@@ -24,24 +24,46 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="flex p-10 h-screen max-h-200" id="Home">
-      <div className="left w-1/2 flex justify-center flex-col p-5">
-       
-        <h1 className="text-text-main  text-[4rem] leading-18 font-primary">A Better Website for<span className="font-bold"><br />Better First Impression.</span></h1>
-        <p className="font-secondary text-text-muted capitalize text-base leading-6 mt-3 w-[60%]">I help businesses turn their online presence into a website that looks professional, builds trust, and makes it easier for customers to take action.</p>
-        <p className="text-text-muted capitalize text-base leading-6 mt-3">Modern interfaces. Smooth interactions. Clean, responsive code.</p>
+    <section className="sm:flex p-2 sm:p-10 h-[80vh] relative" id="Home">
+      <div className=" left absolute top-0 left-0 sm:static w-full lg:w-1/2 flex justify-center sm:pt-0 items-center flex-col p-5 h-full ">
+        <h1 className="text-text-main text-[2rem]  sm:text-[4rem]  leading-8 sm:leading-18 font-primary text-center">
+          A Better Website for
+          <span className="font-bold">
+            <br />
+            Better First Impression.
+          </span>
+        </h1>
+        <p className=" text-center font-secondary text-text-muted capitalize text-[0.8rem] sm:text-base leading-6 mt-3 w-full sm:w-[60%]">
+          I help businesses turn their online presence into a website that looks
+          professional, builds trust, and makes it easier for customers to take
+          action.
+        </p>
+        <p className="font-secondary text-center text-text-muted capitalize text-[0.7rem] sm:text-base leading-6 mt-3">
+          Modern interfaces. Smooth interactions. Clean, responsive code.
+        </p>
         <div className="btns flex gap-5 mt-5">
-          <a target="_blank" href="https://www.instagram.com/lohit_kcodes/" className="text-white bg-primary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center font-secondary">Start Now</a>
-          <a href="#Projects" className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-10 p-2 flex items-center justify-center text-sm font-secondary">Explore My Work</a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/lohit_kcodes/"
+            className="text-white bg-primary-btn rounded-4xl font-bold px-[18px] py-2  sm:px-10 sm:py-2 text-sm  flex items-center justify-center text-center font-secondary"
+          >
+            Start Now
+          </a>
+          <a
+            href="#Projects"
+            className="text-secondary-btn-text bg-secondary-btn rounded-4xl font-bold px-[18px] py-2 sm:px-10 sm:py-2 flex items-center justify-center text-center text-sm font-secondary"
+          >
+            Explore My Work
+          </a>
         </div>
-
       </div>
       <div
-        className="relative w-1/2 h-full overflow-hidden flex items-center justify-center"
+        className="relative hidden  w-full lg:w-1/2 h-full overflow-hidden lg:flex items-center justify-center"
         onMouseMove={handleMouseMove}
       >
         {/* ── 3D WebGL Canvas — Background Layer (z-0) ── */}
-        <div className="absolute inset-0 z-0">
+        {/* Optimize this for mobile and add to the website its hidden for smaller screens */}
+        <div className=" absolute inset-0 -z-1 opacity-40 sm:opacity-100">
           <Suspense fallback={<CanvasFallback />}>
             <Canvas
               camera={{ position: [0, 0, 6], fov: 45 }}
@@ -51,7 +73,7 @@ export default function HeroSection() {
                 powerPreference: "high-performance",
               }}
               dpr={[1, 2]}
-             
+              style={{ width: "100%", height: "100%" }}
             >
               <LiquidMetalOrb mousePos={mousePos} />
             </Canvas>

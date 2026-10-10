@@ -46,7 +46,7 @@ const stats = [
 
 export default function AboutSectionNew() {
   return (
-    <section className="w-full bg-bg-dark px-5 py-20 sm:px-8 lg:px-12 xl:px-16" id="About">
+    <section className="w-full bg-bg-dark px-5 py-10 sm:py-20 sm:px-8 lg:px-12 xl:px-16" id="About">
       
         <div className="grid items-start gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 xl:gap-28">
 
@@ -209,8 +209,9 @@ export default function AboutSectionNew() {
                   rounded-full
                   bg-primary-btn
                   px-7
-                  py-4
-                  text-[14px]
+                  sm:py-4
+                   py-3                 
+                  sm:text-[14px]
                   font-semibold
                   text-white
                   transition-all
@@ -233,7 +234,8 @@ export default function AboutSectionNew() {
                   rounded-full
                   font-secondary
                   px-7
-                  py-4
+                  sm:py-4
+                   py-3 
                   text-[14px]
                   font-semibold
                   text-secondary-btn-text

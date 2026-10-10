@@ -17,7 +17,7 @@ const App = () => {
     <div>
       <div className="container mx-auto max-w-384 relative ">
         <PullCord
-          className="pullcord-left "
+          className="pullcord-left z-50"
           onPull={() => {
             lightModeToggle();
             setIsLightMode(!isLightMode);

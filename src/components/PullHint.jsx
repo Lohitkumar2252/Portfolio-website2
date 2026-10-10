@@ -18,7 +18,7 @@ export function PullHint({
         className={[
           'pointer-events-none z-[4] flex flex-row-reverse items-end gap-1 select-none',
           'text-[rgba(160,160,140,0.75)] transition-all duration-500 ease-out absolute left-12.5 top-21.25',
-          'max-sm:hidden ',
+          ' ',
           hidden ? '-translate-y-1.5 opacity-0' : 'opacity-100',
           className,
         ].join(' ')}

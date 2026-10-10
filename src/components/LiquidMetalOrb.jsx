@@ -1,5 +1,5 @@
 import { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import {
   MeshDistortMaterial,
   Environment,
@@ -50,13 +50,13 @@ export default function LiquidMetalOrb({ mousePos }) {
     const scale = 1 + Math.sin(t * 0.5) * 0.015 + Math.sin(t * 0.8) * 0.01;
     meshRef.current.scale.setScalar(scale);
   });
-
+  const { viewport } = useThree();
+  const responsiveRadius = viewport.width * 0.30;
   return (
     <>
       {/* Studio environment for chrome reflections */}
 
       <Environment preset="studio" />
-    
 
       {/* Ambient light for base brightness */}
       <ambientLight intensity={0.15} />
@@ -83,7 +83,7 @@ export default function LiquidMetalOrb({ mousePos }) {
       {/* Right accent light */}
       <pointLight position={[6, -1, 1]} intensity={1.5} color="#ffffff" />
 
-      <Sphere ref={meshRef} args={[1.8, 64, 64]}>
+      <Sphere ref={meshRef} args={[responsiveRadius, 64, 64]}>
         <MeshDistortMaterial
           ref={materialRef}
           color="#d0d8e8"
