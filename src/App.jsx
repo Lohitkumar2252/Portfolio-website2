@@ -31,7 +31,7 @@ const App = () => {
         />
 
         <PullHint />
-        <Navbar />
+        <Navbar LightMode={isLightMode} />
         <HeroSection/>
         <AboutSectionNew />
         <ProjectsSection />

@@ -1,7 +1,8 @@
 import { useRef, useCallback, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
-import LiquidMetalOrb from "./LiquidMetalOrb";
+
+import OrbCanvas from "./OrbCanvas";
 
 // ─── Canvas Fallback ──────────────────────────────────────────────────────────
 
@@ -15,30 +16,28 @@ export default function HeroSection() {
   // Shared mouse position ref (avoids re-renders, passed to orb)
   const mousePos = useRef({ x: 0, y: 0 });
 
-  const handleMouseMove = useCallback((e) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { width, height } = currentTarget.getBoundingClientRect();
-    // Normalize to [-1, 1]
-    mousePos.current.x = (clientX / width) * 2 - 1;
-    mousePos.current.y = -((clientY / height) * 2 - 1);
+   const handleMouseMove = useCallback((e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    mousePos.current.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mousePos.current.y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
   }, []);
 
   return (
-    <section className="sm:flex p-2 sm:p-10 h-[80vh] relative" id="Home">
-      <div className=" left absolute top-0 left-0 sm:static w-full lg:w-1/2 flex justify-center sm:pt-0 items-center flex-col p-5 h-full ">
-        <h1 className="text-text-main text-[2rem]  sm:text-[4rem]  leading-8 sm:leading-18 font-primary text-center">
+    <section className="sm:flex p-2 sm:p-10 h-[80vh] max-h-220   relative" id="Home">
+      <div className=" left absolute top-0 left-0 sm:static w-full lg:w-1/2 flex justify-center sm:pt-0 items-center flex-col p-5 h-full mt-10 sm:mt-0">
+        <h1 className="text-text-main text-[2rem] text-center sm:text-left  sm:text-[4rem]  leading-8 sm:leading-18 font-primary ">
           A Better Website for
           <span className="font-bold">
             <br />
             Better First Impression.
           </span>
         </h1>
-        <p className=" text-center font-secondary text-text-muted capitalize text-[0.8rem] sm:text-base leading-6 mt-3 w-full sm:w-[60%]">
+        <p className=" text-center sm:text-left font-secondary text-text-muted capitalize text-[0.8rem] sm:text-base leading-6 mt-3 w-full sm:w-[60%]">
           I help businesses turn their online presence into a website that looks
           professional, builds trust, and makes it easier for customers to take
           action.
         </p>
-        <p className="font-secondary text-center text-text-muted capitalize text-[0.7rem] sm:text-base leading-6 mt-3">
+        <p className="font-secondary text-center sm:text-left  text-text-muted capitalize text-[0.7rem] sm:text-base leading-6 mt-3">
           Modern interfaces. Smooth interactions. Clean, responsive code.
         </p>
         <div className="btns flex gap-5 mt-5">
@@ -58,25 +57,16 @@ export default function HeroSection() {
         </div>
       </div>
       <div
-        className="relative hidden  w-full lg:w-1/2 h-full overflow-hidden lg:flex items-center justify-center"
+        className="relative flex  w-full lg:w-1/2 h-full overflow-hidden lg:flex items-center justify-center"
         onMouseMove={handleMouseMove}
       >
         {/* ── 3D WebGL Canvas — Background Layer (z-0) ── */}
-        {/* Optimize this for mobile and add to the website its hidden for smaller screens */}
+        
         <div className=" absolute inset-0 -z-1 opacity-40 sm:opacity-100">
+          
+
           <Suspense fallback={<CanvasFallback />}>
-            <Canvas
-              camera={{ position: [0, 0, 6], fov: 45 }}
-              gl={{
-                antialias: true,
-                alpha: true,
-                powerPreference: "high-performance",
-              }}
-              dpr={[1, 2]}
-              style={{ width: "100%", height: "100%" }}
-            >
-              <LiquidMetalOrb mousePos={mousePos} />
-            </Canvas>
+            <OrbCanvas mousePos={mousePos} />
           </Suspense>
         </div>
 
