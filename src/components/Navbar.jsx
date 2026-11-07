@@ -6,7 +6,7 @@ const Navbar = ({ LightMode }) => {
   return (
     <nav className=" mx-auto max-w-[25rem] sm:max-w-150 lg:max-w-200 rounded-4xl flex items-center p-2 bg-bg-medium justify-between border border-navbar-border sticky top-5 z-50 h-16">
       <h1 className=" font-primary text-text-main font-bold text-base ml-5">
-        LOHIT KUMAR
+        LOHIT_KCODES
       </h1>
       <div className="menu mr-5 sm:hidden">
         <img
